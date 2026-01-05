@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Snake Game</title>
+  <script src="snake.js"></script>
+</head>
+<body>
+
+<canvas id="viewport" width="640" height="480"></canvas>
+
+<script>
+(function () {
+  const allowedDomains = [
+    "bulofkgames.blogspot.com",
+    "thebulofkproject.blogspot.com",
+    "github.io"
+  ];
+
+  const OFFICIAL_SITE = "https://bulofkgames.blogspot.com/";
+  const ref = document.referrer.toLowerCase();
+
+  if (!ref) return;
+
+  const allowed = allowedDomains.some(domain => ref.includes(domain));
+
+  if (!allowed) {
+    window.location.replace(OFFICIAL_SITE);
+  }
+})();
+</script>
+
+</body>
+</html>
